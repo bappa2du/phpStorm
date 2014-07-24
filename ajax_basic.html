@@ -8,6 +8,7 @@
         function loadXML()
         {
             var xml_http;
+
             if(window.XMLHttpRequest)
             {
                 xml_http = new XMLHttpRequest();
@@ -24,7 +25,9 @@
                     document.getElementById('demo').innerHTML = xml_http.responseText;
                 }
             }
+
             xml_http.open('get','ajax.txt',true);
+
             xml_http.send();
         }
 
