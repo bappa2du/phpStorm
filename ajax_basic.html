@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <script type="text/javascript">
+        function loadXML()
+        {
+            var xml_http;
+            if(window.XMLHttpRequest)
+            {
+                xml_http = new XMLHttpRequest();
+            }
+            else
+            {
+                xml_http = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+
+            xml_http.onreadystatechange = function()
+            {
+                if(xml_http.readyState == 4 && xml_http.status == 200)
+                {
+                    document.getElementById('demo').innerHTML = xml_http.responseText;
+                }
+            }
+            xml_http.open('get','ajax.txt',true);
+            xml_http.send();
+        }
+
+
+    </script>
+    <p id="demo">Thank you</p>
+    <button type="button" onclick="loadXML()">Click here</button>
+</body>
+</html>
